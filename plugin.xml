@@ -93,22 +93,20 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 
 		<framework custom="true" src="src/ios/Crashlytics/Crashlytics.framework" />
 		<framework custom="true" src="src/ios/Crashlytics/Fabric.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/GoogleAppMeasurement.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/MeasurementNanoPB.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/FirebaseCore.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/FirebaseAnalytics.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/GoogleUtilities.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/nanopb.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/FirebaseInstanceID.framework" />
-		<framework custom="true" src="src/ios/Firebase/Analytics/FirebaseCoreDiagnostics.framework" />
-		<framework custom="true" src="src/ios/Firebase/Auth/GTMSessionFetcher.framework" />
-		<framework custom="true" src="src/ios/Firebase/Auth/FirebaseAuth.framework" />
-		<framework custom="true" src="src/ios/Firebase/Messaging/FirebaseMessaging.framework" />
-		<framework custom="true" src="src/ios/Firebase/Performance/GoogleToolboxForMac.framework" />
-		<framework custom="true" src="src/ios/Firebase/Performance/FirebasePerformance.framework" />
-		<framework custom="true" src="src/ios/Firebase/RemoteConfig/Protobuf.framework" />
-		<framework custom="true" src="src/ios/Firebase/RemoteConfig/FirebaseRemoteConfig.framework" />
-		<framework custom="true" src="src/ios/Firebase/RemoteConfig/FirebaseABTesting.framework" />
+
+		<podspec>
+			<config>
+				<source url="https://github.com/CocoaPods/Specs.git"/>
+			</config>
+			<pods use-frameworks="true">
+				<pod name="FirebaseCore" spec="~> 4.0.20" />
+				<pod name="FirebaseAuth" spec="~> 4.6.1" />
+			    <pod name="FirebaseAnalytics" spec="~> 4.2.0" />
+			    <pod name="FirebaseMessaging" spec="~> 2.0.8" />
+			    <pod name="FirebaseRemoteConfig" spec="~> 2.1.3" />
+			    <pod name="FirebasePerformance" spec="~> 1.1.3" />
+			</pods>
+		</podspec>
 	</platform>
 
 	<platform name="browser">
