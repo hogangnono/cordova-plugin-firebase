@@ -100,11 +100,11 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			</config>
 			<pods use-frameworks="true">
 				<pod name="FirebaseCore" spec="~> 4.0.20" />
-				<pod name="FirebaseAuth" spec="~> 4.6.1" />
 			    <pod name="FirebaseAnalytics" spec="~> 4.2.0" />
 			    <pod name="FirebaseMessaging" spec="~> 2.0.8" />
-			    <pod name="FirebaseRemoteConfig" spec="~> 2.1.3" />
-			    <pod name="FirebasePerformance" spec="~> 1.1.3" />
+				<!-- <pod name="FirebaseAuth" spec="~> 4.6.1" /> -->
+			    <!-- <pod name="FirebaseRemoteConfig" spec="~> 2.1.3" /> -->
+			    <!-- <pod name="FirebasePerformance" spec="~> 1.1.3" /> -->
 			</pods>
 		</podspec>
 	</platform>
