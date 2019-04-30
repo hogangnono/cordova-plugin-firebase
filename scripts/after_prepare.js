@@ -17,8 +17,6 @@ var name = utilities.getValue(config, 'name');
 var IOS_DIR = 'platforms/ios';
 var ANDROID_DIR = 'platforms/android';
 
-var ALTER_DIR = 'config'
-
 var PLATFORM = {
   IOS: {
     dest: [
@@ -26,7 +24,6 @@ var PLATFORM = {
       IOS_DIR + '/' + name + '/Resources/Resources/GoogleService-Info.plist'
     ],
     src: [
-      ALTER_DIR + '/' + 'GoogleService-Info.plist',
       'GoogleService-Info.plist',
       IOS_DIR + '/www/GoogleService-Info.plist',
       'www/GoogleService-Info.plist'
@@ -38,7 +35,6 @@ var PLATFORM = {
       ANDROID_DIR + '/app/google-services.json'
     ],
     src: [
-      ALTER_DIR + '/' + 'google-services.json',
       'google-services.json',
       ANDROID_DIR + '/assets/www/google-services.json',
       'www/google-services.json',
