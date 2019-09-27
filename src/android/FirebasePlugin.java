@@ -6,9 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.NotificationManagerCompat;
 import android.util.Base64;
 import android.util.Log;
+
+import androidx.core.app.NotificationManagerCompat;
 
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
@@ -606,8 +607,7 @@ public class FirebasePlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
             try {
-                byte[] bytes = namespace == null ? FirebaseRemoteConfig.getInstance().getByteArray(key)
-                        : FirebaseRemoteConfig.getInstance().getByteArray(key, namespace);
+                byte[] bytes = FirebaseRemoteConfig.getInstance().getByteArray(key);
                 JSONObject object = new JSONObject();
                 object.put("base64", Base64.encodeToString(bytes, Base64.DEFAULT));
                 object.put("array", new JSONArray(bytes));
@@ -624,9 +624,7 @@ public class FirebasePlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
             try {
-                FirebaseRemoteConfigValue value = namespace == null
-                        ? FirebaseRemoteConfig.getInstance().getValue(key)
-                        : FirebaseRemoteConfig.getInstance().getValue(key, namespace);
+                FirebaseRemoteConfigValue value = FirebaseRemoteConfig.getInstance().getValue(key);
                 callbackContext.success(value.asString());
             } catch (Exception e) {
                 Crashlytics.logException(e);
@@ -680,10 +678,7 @@ public class FirebasePlugin extends CordovaPlugin {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
-                    if (namespace == null)
-                        FirebaseRemoteConfig.getInstance().setDefaults(defaultsToMap(defaults));
-                    else
-                        FirebaseRemoteConfig.getInstance().setDefaults(defaultsToMap(defaults), namespace);
+                    FirebaseRemoteConfig.getInstance().setDefaults(defaultsToMap(defaults));
                     callbackContext.success();
                 } catch (Exception e) {
                     Crashlytics.logException(e);
@@ -882,7 +877,7 @@ public class FirebasePlugin extends CordovaPlugin {
                     }
 
                     if (myTrace != null && myTrace instanceof Trace) {
-                        myTrace.incrementCounter(counterNamed);
+                        myTrace.incrementMetric(counterNamed, 1);
                         callbackContext.success();
                     } else {
                         callbackContext.error("Trace not found");
