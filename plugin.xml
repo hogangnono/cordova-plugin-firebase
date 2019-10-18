@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-firebase" version="2.0.6-hogangnono"
+<plugin id="cordova-plugin-firebase" version="2.0.7-hogangnono"
 xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>Google Firebase Plugin</name>
@@ -60,6 +60,8 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 		<framework src="com.google.firebase:firebase-messaging:+" />
 		<framework src="com.google.firebase:firebase-config:+" />
 		<framework src="com.google.firebase:firebase-perf:+" />
+		<framework src="com.crashlytics.sdk.android:crashlytics:+" />
+        <framework src="com.google.firebase:firebase-analytics:+" />
 	</platform>
 
 	<platform name="ios">
@@ -102,9 +104,11 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 				<pod name="FirebaseCore" spec="~> 4.0.20" />
 			    <pod name="FirebaseAnalytics" spec="~> 4.2.0" />
 			    <pod name="FirebaseMessaging" spec="~> 2.0.8" />
-				<!-- <pod name="FirebaseAuth" spec="~> 4.6.1" /> -->
-			    <!-- <pod name="FirebaseRemoteConfig" spec="~> 2.1.3" /> -->
-			    <!-- <pod name="FirebasePerformance" spec="~> 1.1.3" /> -->
+				<pod name="FirebaseAuth" spec="~> 4.6.1" />
+			    <pod name="FirebaseRemoteConfig" spec="~> 2.1.3" />
+			    <pod name="FirebasePerformance" spec="~> 1.1.3" />
+			    <pod name="Fabric" spec="~> 1.10.2" />
+			    <pod name="Crashlytics" spec="~> 3.13.4" />
 			</pods>
 		</podspec>
 	</platform>
