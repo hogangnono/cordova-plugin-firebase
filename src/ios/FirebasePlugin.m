@@ -389,8 +389,6 @@ static FirebasePlugin *firebasePlugin;
 }
 
 
-Performace
-
 - (void)startTrace:(CDVInvokedUrlCommand *)command {
 
     [self.commandDelegate runInBackground:^{
