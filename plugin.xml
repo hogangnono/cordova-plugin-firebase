@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-firebase" version="2.0.10-hogangnono"
+<plugin id="cordova-plugin-firebase" version="2.0.11-hogangnono"
 xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>Google Firebase Plugin</name>
@@ -86,8 +86,6 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 
 		<resource-file src="src/ios/GoogleService-Info.plist" />
 
-		<header-file src="src/ios/AppDelegate+FirebasePlugin.h" />
-		<source-file src="src/ios/AppDelegate+FirebasePlugin.m" />
 		<header-file src="src/ios/FirebasePlugin.h" />
 		<source-file src="src/ios/FirebasePlugin.m" />
 
